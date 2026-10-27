@@ -1,0 +1,69 @@
+---
+import { Image } from 'astro:assets';
+import { img } from '../../assets';
+import { wa } from '../../lib/whatsapp';
+---
+
+<div class="w hero">
+  <div class="hc">
+    <h1>
+      Cada cumpleaños merece un pastel que <mark>se recuerde</mark>
+    </h1>
+    <p class="l">
+      Pasteles personalizados con un sabor que tus invitados van a pedir otra vez. Cotiza por WhatsApp en
+      minutos.
+    </p>
+    <a class="btn" href={wa.general} data-wa target="_blank" rel="noopener">
+      <svg>
+        <use href="#wa" />
+      </svg>
+      Cotizar mi pastel
+    </a>
+    <small>Recoge en tienda o recibe en casa.</small>
+  </div>
+  <div class="hv">
+    <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="40" />
+      <circle cx="88.0" cy="50.0" r="11" />
+      <circle cx="85.7" cy="63.0" r="11" />
+      <circle cx="79.1" cy="74.4" r="11" />
+      <circle cx="69.0" cy="82.9" r="11" />
+      <circle cx="56.6" cy="87.4" r="11" />
+      <circle cx="43.4" cy="87.4" r="11" />
+      <circle cx="31.0" cy="82.9" r="11" />
+      <circle cx="20.9" cy="74.4" r="11" />
+      <circle cx="14.3" cy="63.0" r="11" />
+      <circle cx="12.0" cy="50.0" r="11" />
+      <circle cx="14.3" cy="37.0" r="11" />
+      <circle cx="20.9" cy="25.6" r="11" />
+      <circle cx="31.0" cy="17.1" r="11" />
+      <circle cx="43.4" cy="12.6" r="11" />
+      <circle cx="56.6" cy="12.6" r="11" />
+      <circle cx="69.0" cy="17.1" r="11" />
+      <circle cx="79.1" cy="25.6" r="11" />
+      <circle cx="85.7" cy="37.0" r="11" />
+    </svg>
+    <figure>
+      <Image src={img.hero} loading="eager" fetchpriority="high" alt="Pastel de vainilla con betún blanco y confeti de colores" />
+    </figure>
+    <div class="rb">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <defs>
+          <path id="rc" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0" />
+        </defs>
+        <circle cx="60" cy="60" r="58" fill="#E6CF94" stroke="#5E2F26" stroke-width="2" />
+        <text font-size="11" font-family="Albert Sans,sans-serif" font-weight="700" fill="#5E2F26">
+          <textPath href="#rc" textLength="290" lengthAdjust="spacing">
+            PASTELES HECHOS A TU MEDIDA ✦ CON AMOR ✦
+          </textPath>
+        </text>
+      </svg>
+      <Image src={img.logo} alt="" />
+    </div>
+    <div class="stk">
+      Pide con 3 días
+      <br />
+      de anticipación
+    </div>
+  </div>
+</div>

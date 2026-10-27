@@ -1,0 +1,46 @@
+---
+import Icons from '../components/shared/Icons.astro';
+import { site } from '../data/site';
+interface Props {
+  fontsHref: string;
+  title?: string;
+  description?: string;
+}
+const {
+  fontsHref,
+  title = `${site.nombre} | Pasteles para cada cumpleaños`,
+  description = 'Pasteles personalizados, rebanadas, cupcakes y galletas. Cotiza por WhatsApp en minutos.',
+} = Astro.props;
+const ld = {
+  '@context': 'https://schema.org',
+  '@type': 'Bakery',
+  name: site.nombre,
+  address: { '@type': 'PostalAddress', streetAddress: site.direccion, addressLocality: site.ciudad },
+  sameAs: [site.instagramUrl],
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href={fontsHref} rel="stylesheet" />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+  </head>
+  <body>
+    <Icons />
+    <slot />
+  </body>
+</html>

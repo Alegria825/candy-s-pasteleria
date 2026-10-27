@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+import { img } from '../../assets';
+import { sabores } from '../../data/sabores';
+import { wa } from '../../lib/whatsapp';
+---
+
+<section class="band">
+  <div class="w">
+    <h2 class="rv" id="pasteles">
+      Pasteles hechos a tu medida
+    </h2>
+    <p class="rv">
+      Nombre, edad y tema de tu fiesta: tú lo eliges y nosotros lo decoramos. Más pisos y diseños, se cotizan
+      por WhatsApp.
+    </p>
+    <div class="pol rv">
+      <figure class="po">
+        <Image src={img.tresPisos} alt="Pastel de tres pisos con nombres y edades" />
+      </figure>
+      <figure class="po">
+        <Image src={img.bodas} alt="Pastel de bodas con rosas y figuras" />
+      </figure>
+      <figure class="po">
+        <Image src={img.chocolate} alt="Pastel de chocolate con cobertura blanca" />
+      </figure>
+    </div>
+    <h2 class="rv" id="sabores">
+      Elige tu sabor
+    </h2>
+    <p class="hint">Desliza para ver los 8 sabores</p>
+    <div class="fcs rv">
+      {sabores.map((s) => (
+        <article class:list={['fc', s.confeti && 'cf']} style={`--b:${s.bg};--t:${s.fg}`}>
+          <div>
+            <h3>{s.nombre}</h3>
+            <p>{s.descripcion}</p>
+          </div>
+          <div class="fr">
+            <span class="pl">{s.etiqueta}</span>
+            <button class="add" data-k="Pastel" data-n={s.nombre} data-l="1">
+              + Agregar
+            </button>
+          </div>
+        </article>
+      ))}
+    </div>
+    <a class="btn" href={wa.general} data-wa target="_blank" rel="noopener">
+      <svg>
+        <use href="#wa" />
+      </svg>
+      Pedir mi pastel
+    </a>
+  </div>
+</section>

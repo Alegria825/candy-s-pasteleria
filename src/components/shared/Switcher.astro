@@ -1,0 +1,49 @@
+---
+import { showSwitcher } from '../../../design.config.mjs';
+interface Props {
+  current: string;
+}
+const { current } = Astro.props;
+const opts = [
+  { id: 'chocolate-merengue', href: '/propuesta-4', texto: 'Propuesta 4: Chocolate y Merengue' },
+  { id: 'cacao-nocturno', href: '/propuesta-5', texto: 'Propuesta 5: Cacao Nocturno' },
+];
+---
+
+{showSwitcher && (
+  <div class="sw">
+    <span>Diseño:</span>
+    {opts.map((o) => (
+      <a href={o.href} class:list={[o.id === current && 'on']}>
+        {o.texto}
+      </a>
+    ))}
+  </div>
+)}
+<style>
+  .sw {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    background: #111;
+    color: #fff;
+    font:
+      600 0.78rem system-ui,
+      sans-serif;
+    padding: 6px 10px;
+  }
+  .sw a {
+    color: #fff;
+    text-decoration: none;
+    padding: 3px 10px;
+    border-radius: 99px;
+    border: 1px solid #666;
+  }
+  .sw a.on {
+    background: #fff;
+    color: #111;
+    border-color: #fff;
+  }
+</style>

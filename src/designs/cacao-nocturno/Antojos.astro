@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import { img } from '../../assets';
+import { antojos } from '../../data/antojos';
+import { wa } from '../../lib/whatsapp';
+---
+
+<section>
+  <div class="w">
+    <h2 class="rv" id="antojos">
+      Para el antojo <em>de hoy</em>
+    </h2>
+    <p class="rv">Rebanadas, postres, cupcakes y galletas para regalar o darte un gusto.</p>
+    <div class="an rv">
+      {antojos.map((a) => (
+        <figure>
+          <Image src={img[a.imagen]} alt={a.alt} loading="lazy" />
+          <figcaption>{a.nombre}</figcaption>
+          <button class="add" data-k="Antojo" data-n={a.nombre} aria-label={`Agregar ${a.nombre} al pedido`}>
+            +
+          </button>
+        </figure>
+      ))}
+    </div>
+    <a class="btn" href={wa.antojos} data-wa target="_blank" rel="noopener">
+      <svg>
+        <use href="#wa" />
+      </svg>
+      Pedir antojos
+    </a>
+  </div>
+</section>

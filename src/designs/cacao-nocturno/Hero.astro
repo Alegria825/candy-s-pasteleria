@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import { img } from '../../assets';
+import { wa } from '../../lib/whatsapp';
+---
+
+<div class="hero">
+  <div class="glow"></div>
+  <figure class="hf">
+    <div class="im">
+      <Image src={img.hero} loading="eager" fetchpriority="high" alt="Pastel de vainilla con betún blanco y confeti de colores" />
+    </div>
+  </figure>
+  <div class="ht">
+    <h1>
+      <span class="ln">
+        <span>Cada cumpleaños</span>
+      </span>
+      <span class="ln">
+        <span>
+          <em>merece un pastel</em>
+        </span>
+      </span>
+      <span class="ln">
+        <span>que se recuerde.</span>
+      </span>
+    </h1>
+    <p class="l">
+      Pasteles personalizados con un sabor que tus invitados van a pedir otra vez. Cotiza por WhatsApp en
+      minutos.
+    </p>
+    <a class="btn" href={wa.general} data-wa target="_blank" rel="noopener">
+      <svg>
+        <use href="#wa" />
+      </svg>
+      Cotizar mi pastel
+    </a>
+    <small>Pide con 3 días de anticipación. Recoge en tienda o recibe en casa.</small>
+  </div>
+</div>

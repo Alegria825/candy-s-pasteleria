@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+import { img } from '../../assets';
+---
+
+<header class="top">
+  <Image src={img.logo} class="lg" width="160" height="160" alt="Candy’s Pastelería" />
+  <div class="ha">
+    <button class="ib cb" data-cart aria-label="Ver mi pedido">
+      <svg
+        viewBox="0 0 24 24"
+        width="22"
+        height="22"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M5 8h14l-1.2 11H6.2z" />
+        <path d="M9 8a3 3 0 0 1 6 0" />
+      </svg>
+      <span class="cnt" style="display:none">
+        0
+      </span>
+    </button>
+    <button class="ib bgr" data-menu aria-label="Abrir menú" aria-expanded="false">
+      <i></i>
+      <i></i>
+      <i></i>
+    </button>
+  </div>
+</header>

@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import { img } from '../../assets';
+import { sabores } from '../../data/sabores';
+---
+
+<section>
+  <div class="w">
+    <h2 class="rv" id="pasteles">
+      Pasteles hechos <em>a tu medida</em>
+    </h2>
+    <p class="rv">
+      Nombre, edad y tema de tu fiesta: tú lo eliges y nosotros lo decoramos. Más pisos y diseños, se cotizan
+      por WhatsApp.
+    </p>
+    <div class="gl rv">
+      <figure class="g1">
+        <Image src={img.tresPisos} alt="Pastel de tres pisos con nombres y edades" />
+      </figure>
+      <figure class="g2">
+        <Image src={img.bodas} alt="Pastel de bodas con rosas y figuras" />
+      </figure>
+      <figure class="g3">
+        <Image src={img.chocolate} alt="Pastel de chocolate con cobertura blanca" />
+      </figure>
+    </div>
+    <h2 class="rv" id="sabores">
+      La carta de <em>sabores</em>
+    </h2>
+    <ul class="ct rv">
+      {sabores.map((s) => (
+        <li>
+          <b>{s.nombre}</b>
+          <span>{s.descripcion}</span>
+          <button class="add" data-k="Pastel" data-n={s.nombre} aria-label={`Agregar ${s.nombre} al pedido`}>
+            +
+          </button>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

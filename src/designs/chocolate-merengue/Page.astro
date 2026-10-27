@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import Switcher from '../../components/shared/Switcher.astro';
+import Layers from '../../components/shared/Layers.astro';
+import { site } from '../../data/site';
+import Header from './Header.astro';
+import Hero from './Hero.astro';
+import Problema from './Problema.astro';
+import Pasteles from './Pasteles.astro';
+import Antojos from './Antojos.astro';
+import Proceso from './Proceso.astro';
+import Testimonios from './Testimonios.astro';
+import Visitanos from './Visitanos.astro';
+import Faq from './Faq.astro';
+import Cierre from './Cierre.astro';
+import './styles.css';
+const fonts =
+  'https://fonts.googleapis.com/css2?family=Caprasimo&family=Albert+Sans:wght@400;500;700&display=swap';
+---
+
+<Base fontsHref={fonts}>
+  <Switcher current="chocolate-merengue" />
+  <div class="mq" aria-hidden="true">
+    <div>
+      {site.marquee}
+      {site.marquee}
+    </div>
+  </div>
+  <div class="hb">
+    <Header />
+    <Hero />
+  </div>
+  <main>
+    <Problema />
+    <Pasteles />
+    <Antojos />
+    <Proceso />
+    <Testimonios />
+    <Visitanos />
+    <Faq />
+  </main>
+  <Cierre />
+  <Layers />
+  <script>
+    import './ui.js';
+  </script>
+</Base>

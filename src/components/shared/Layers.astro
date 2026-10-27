@@ -1,0 +1,52 @@
+---
+import { site } from '../../data/site';
+import { wa } from '../../lib/whatsapp';
+---
+
+<nav class="mn" id="mn" aria-label="Menú">
+  <button class="ib x" data-mc aria-label="Cerrar menú">
+    ✕
+  </button>
+  {site.menu.map((m, i) => (
+    <a class="l" style={`--i:${i}`} href={m.href} data-mc>
+      {m.texto}
+    </a>
+  ))}
+  <a class="btn" href={wa.general} data-wa target="_blank" rel="noopener">
+    <svg>
+      <use href="#wa" />
+    </svg>
+    Cotizar por WhatsApp
+  </a>
+</nav>
+<div class="ov" id="ov" data-x></div>
+<aside class="cart" id="cart" aria-hidden="true" aria-label="Tu pedido">
+  <div class="chd">
+    <h3>Tu pedido</h3>
+    <button class="ib" data-x aria-label="Cerrar pedido">
+      ✕
+    </button>
+  </div>
+  <div id="ci"></div>
+  <p id="ce">Aún no has agregado nada. Elige un pastel o un antojo y aparecerá aquí.</p>
+  <a class="btn" id="cw" href={wa.general} data-wa target="_blank" rel="noopener">
+    <svg>
+      <use href="#wa" />
+    </svg>
+    Enviar pedido por WhatsApp
+  </a>
+  <p class="nt">Te confirmamos precio, tamaño y fecha por WhatsApp.</p>
+</aside>
+<div id="ts" role="status">
+  <span></span>
+  <button data-cart>Ver pedido</button>
+</div>
+<a class="btn fab" href={wa.general} data-wa target="_blank" rel="noopener">
+  <svg>
+    <use href="#wa" />
+  </svg>
+  <span class="fl">Pedir por WhatsApp</span>
+</a>
+<script>
+  import '../../lib/cart';
+</script>

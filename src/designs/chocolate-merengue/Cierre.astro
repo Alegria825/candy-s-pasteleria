@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import { img } from '../../assets';
+import { wa } from '../../lib/whatsapp';
+import { site } from '../../data/site';
+---
+
+<footer class="cl">
+  <div class="w">
+    <h2>Tu celebración ya tiene fecha. Falta el pastel.</h2>
+    <p>Escríbenos hoy y apartamos tu fecha.</p>
+    <a class="btn" href={wa.general} data-wa target="_blank" rel="noopener">
+      <svg>
+        <use href="#wa" />
+      </svg>
+      Cotizar por WhatsApp
+    </a>
+    <Image src={img.logo} alt="Candy’s Pastelería" loading="lazy" />
+    <small>Sucursal Norte: {site.direccion}</small>
+    <small>
+      <a href={site.instagramUrl} target="_blank" rel="noopener">
+        {site.instagramHandle}
+      </a>
+    </small>
+  </div>
+</footer>

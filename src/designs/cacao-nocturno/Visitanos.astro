@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import { img } from '../../assets';
+import { site } from '../../data/site';
+---
+
+<section class="vs">
+  <Image src={img.local} alt="Interior de la sucursal Norte de Candy’s Pastelería" loading="lazy" />
+  <div class="vc rv">
+    <h2 id="visitanos">
+      Pasa por tu pastel y <em>quédate por un café</em>
+    </h2>
+    <p>Pasteles, cafetería, postres y rebanadas en un solo lugar.</p>
+    <p>
+      <strong>Sucursal Norte:</strong> {site.direccion}.
+    </p>
+    <p>
+      <strong>Horario:</strong> {site.horario}
+    </p>
+    <a class="b2" href={site.mapsUrl} target="_blank" rel="noopener">
+      Cómo llegar
+    </a>
+  </div>
+</section>

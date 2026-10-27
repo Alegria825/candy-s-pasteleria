@@ -1,0 +1,23 @@
+---
+import { testimonios } from '../../data/testimonios';
+import { site } from '../../data/site';
+---
+
+<section>
+  <div class="w">
+    <h2 class="rv" id="opiniones">
+      Lo que dicen quienes ya lo probaron
+    </h2>
+    <div class="tms rv">
+      {testimonios.map((t) => (
+        <div class="bb">
+          <p>“{t.texto}”</p>
+          <p>{t.autor}</p>
+        </div>
+      ))}
+    </div>
+    <a class="b2" href={site.instagramUrl} target="_blank" rel="noopener">
+      Más pasteles en {site.instagramHandle}
+    </a>
+  </div>
+</section>

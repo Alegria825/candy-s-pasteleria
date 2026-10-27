@@ -1,0 +1,68 @@
+// Menú de 1 piso (fuente: menú de la pastelería). bg/fg/confeti solo los usa el diseño Chocolate y Merengue.
+export const sabores = [
+  {
+    nombre: 'Tradicional',
+    descripcion: 'Pan casero de mantequilla con jugo de piña y mermelada de fresa.',
+    etiqueta: 'Mantequilla',
+    bg: '#F4B6C5',
+    fg: '#5E2F26',
+    confeti: false,
+  },
+  {
+    nombre: 'Vainilla',
+    descripcion:
+      'Pan casero de mantequilla con crema pastelera. Elige durazno, fresas, dulce de leche y/o nuez.',
+    etiqueta: 'Mantequilla',
+    bg: '#E6CF94',
+    fg: '#5E2F26',
+    confeti: false,
+  },
+  {
+    nombre: '3 leches',
+    descripcion: 'Bizcocho de vainilla mojado en 3 leches, con crema pastelera y el relleno que elijas.',
+    etiqueta: 'Bizcocho',
+    bg: '#FFFFFF',
+    fg: '#5E2F26',
+    confeti: false,
+  },
+  {
+    nombre: 'Moka tres leches',
+    descripcion: 'Bizcocho mojado en 3 leches con café y chantilly sabor moka.',
+    etiqueta: 'Café',
+    bg: '#5E2F26',
+    fg: '#FFF7F4',
+    confeti: false,
+  },
+  {
+    nombre: 'Milky Way',
+    descripcion: 'Pan de chocolate con suave crema de queso philadelphia y chocolate.',
+    etiqueta: 'Chocolate',
+    bg: '#F4B6C5',
+    fg: '#5E2F26',
+    confeti: false,
+  },
+  {
+    nombre: 'Zanahoria',
+    descripcion: 'Pan de zanahoria con betún de queso philadelphia y nuez, con toque de naranja y canela.',
+    etiqueta: 'Zanahoria',
+    bg: '#E6CF94',
+    fg: '#5E2F26',
+    confeti: false,
+  },
+  {
+    nombre: 'Hershey’s',
+    descripcion: 'Pan de chocolate con betún de queso philadelphia de chocolate Hershey’s.',
+    etiqueta: 'Chocolate',
+    bg: '#5E2F26',
+    fg: '#FFF7F4',
+    confeti: false,
+  },
+  {
+    nombre: 'Birthday cake',
+    descripcion: 'Pan de mantequilla sabor vainilla con chispas de colores y betún de queso de vainilla.',
+    etiqueta: 'Confeti',
+    bg: '#FFFFFF',
+    fg: '#5E2F26',
+    confeti: true,
+  },
+];
