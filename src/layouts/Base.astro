@@ -1,6 +1,7 @@
 ---
 import Icons from '../components/shared/Icons.astro';
 import { site } from '../data/site';
+import { url } from '../lib/url';
 interface Props {
   fontsHref: string;
   title?: string;
@@ -30,7 +31,7 @@ const ld = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <link rel="icon" href="/favicon.svg" />
+    <link rel="icon" href={url('/favicon.svg')} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href={fontsHref} rel="stylesheet" />

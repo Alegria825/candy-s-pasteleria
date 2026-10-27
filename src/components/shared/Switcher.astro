@@ -1,12 +1,13 @@
 ---
 import { showSwitcher } from '../../../design.config.mjs';
+import { url } from '../../lib/url';
 interface Props {
   current: string;
 }
 const { current } = Astro.props;
 const opts = [
-  { id: 'chocolate-merengue', href: '/propuesta-4', texto: 'Propuesta 4: Chocolate y Merengue' },
-  { id: 'cacao-nocturno', href: '/propuesta-5', texto: 'Propuesta 5: Cacao Nocturno' },
+  { id: 'chocolate-merengue', href: url('/propuesta-4'), texto: 'Propuesta 4: Chocolate y Merengue' },
+  { id: 'cacao-nocturno', href: url('/propuesta-5'), texto: 'Propuesta 5: Cacao Nocturno' },
 ];
 ---
 
