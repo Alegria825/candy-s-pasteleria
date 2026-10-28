@@ -1,7 +1,7 @@
 export const site = {
   nombre: 'Candy’s Pastelería',
   // NÚMERO INVENTADO: reemplazar por el real (formato 52 + 10 dígitos, sin espacios ni +).
-  whatsapp: '529610000000',
+  whatsapp: '529611367672',
   direccion: '7a Poniente Norte #436, entre 3a y 4a Norte',
   ciudad: 'Tuxtla Gutiérrez, Chiapas', // por confirmar
   horario: '[POR CONFIRMAR]',
